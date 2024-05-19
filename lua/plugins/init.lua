@@ -42,7 +42,7 @@ return {
         "vimdoc",
         "html",
         "css",
-        "jdsoc",
+        "jsdoc",
         "json",
         "json5",
         "scss",
@@ -63,9 +63,6 @@ return {
       "TZMinimalist",
       "TZFocus",
     },
-    config = function()
-      -- pass
-    end,
   },
   {
     "tpope/vim-fugitive",
