@@ -56,13 +56,20 @@ return {
     "ggandor/lightspeed.nvim",
     lazy = false,
   },
+  -- {
+  --   "tpope/vim-fugitive",
+    -- cmd = {
+    --   "Git",
+    -- },
+    -- -- config = function()
+    --   --#region
+  --   end,
+  -- },
   {
-    "tpope/vim-fugitive",
-    cmd = {
-      "Git",
-    },
+    "dinhhuy258/git.nvim",
+    lazy = false,
     config = function()
-      --#region
+      require("git").setup()
     end,
   },
   {
