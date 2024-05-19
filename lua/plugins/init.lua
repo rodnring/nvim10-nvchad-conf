@@ -1,3 +1,4 @@
+local lazy = require "lazy"
 return {
   {
     "stevearc/conform.nvim",
@@ -56,15 +57,6 @@ return {
     lazy = false,
   },
   {
-    "Pocco81/TrueZen.nvim",
-    lazy = false,
-    cmd = {
-      "TZAtaraxis",
-      "TZMinimalist",
-      "TZFocus",
-    },
-  },
-  {
     "tpope/vim-fugitive",
     cmd = {
       "Git",
@@ -72,6 +64,16 @@ return {
     config = function()
       --#region
     end,
+  },
+  {
+    "folke/twilight.nvim",
+    lazy = false,
+    opts = {},
+  },
+  {
+    "folke/zen-mode.nvim",
+    lazy = false,
+    opts = {},
   },
   {
     "mattn/emmet-vim",
@@ -85,9 +87,6 @@ return {
         tailwind = true,
       },
     },
-  },
-  {
-    "napmn/react-extract.nvim",
   },
   {
     "karb94/neoscroll.nvim",
