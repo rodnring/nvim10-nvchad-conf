@@ -9,14 +9,7 @@ return {
   },
 
   -- These are some examples, uncomment them if you want to see them work!
-  {
-    "neovim/nvim-lspconfig",
-    config = function()
-      require("nvchad.configs.lspconfig").defaults()
-      require "configs.lspconfig"
-    end,
-  },
-
+  --
   {
     "williamboman/mason.nvim",
     opts = {
@@ -32,6 +25,18 @@ return {
         "typescript-language-server",
       },
     },
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+  },
+  {
+    "neovim/nvim-lspconfig",
+    config = function()
+      require("mason").setup()
+      require("mason-lspconfig").setup()
+      require("nvchad.configs.lspconfig").defaults()
+      require "configs.lspconfig"
+    end,
   },
 
   {
@@ -58,11 +63,11 @@ return {
   },
   -- {
   --   "tpope/vim-fugitive",
-    -- cmd = {
-    --   "Git",
-    -- },
-    -- -- config = function()
-    --   --#region
+  -- cmd = {
+  --   "Git",
+  -- },
+  -- -- config = function()
+  --   --#region
   --   end,
   -- },
   {
