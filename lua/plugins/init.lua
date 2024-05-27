@@ -23,7 +23,7 @@ return {
         "chrome-debug-adapter",
         "bash-language-server",
         "typescript-language-server",
-        "astro",
+        "astro-language-server",
       },
     },
   },
@@ -96,11 +96,15 @@ return {
   -- To make a plugin not be loaded
   {
     "NvChad/nvim-colorizer.lua",
-    opts = {
-      user_default_options = {
-        tailwind = true,
-      },
-    },
+    lazy = false,
+    config = function()
+      require("colorizer").setup {
+        user_default_options = {
+          tailwind = true,
+          sass = { enable = true, parsers = { "css" } },
+        },
+      }
+    end,
   },
   {
     "karb94/neoscroll.nvim",
@@ -108,5 +112,18 @@ return {
     config = function()
       require("neoscroll").setup()
     end,
+  },
+  {
+    "olimorris/codecompanion.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-telescope/telescope.nvim", -- Optional
+      {
+        "stevearc/dressing.nvim", -- Optional: Improves the default Neovim UI
+        opts = {},
+      },
+    },
+    config = true,
   },
 }
