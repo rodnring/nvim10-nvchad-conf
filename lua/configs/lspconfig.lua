@@ -28,3 +28,10 @@ lspconfig.tailwindcss.setup {
   on_init = on_init,
   capabilities = capabilities,
 }
+
+--rust 
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+}
